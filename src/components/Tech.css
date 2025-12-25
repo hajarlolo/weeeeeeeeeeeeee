@@ -1,0 +1,304 @@
+.tech-section {
+    padding: 100px 0;
+    width: 100%;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.title {
+    font-size: 2.8rem;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: var(--accent-olive);
+}
+
+.section-subtitle {
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+/* ===== CIRCULAR PROGRESS BARS ===== */
+.circle-progress-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.circle-progress-container.small {
+    width: 80px;
+    height: 80px;
+}
+
+.circle-progress {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    background: conic-gradient(transparent 0deg, transparent 0deg);
+}
+
+.circle-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#782b94 0deg, #f0f0f0 0deg);
+    transition: background 1.5s ease-out;
+    z-index: 1;
+}
+
+/* Pseudo elements to create the "gap" effect */
+.circle-progress::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    background: white;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.circle-progress-container.small .circle-progress::before {
+    top: 6px;
+    left: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+}
+
+.circle-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.circle-percentage {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    z-index: 3;
+}
+
+.circle-progress-container.small .circle-percentage {
+    font-size: 1rem;
+}
+
+/* ===== LEFT SIDE - Technical Skills Grid ===== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 20px;
+}
+
+.skill-circle-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.skill-name {
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    margin-top: 0px;
+}
+
+/* ===== RIGHT SIDE - Soft Skills ===== */
+.soft-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.soft-skill-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+.soft-skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.soft-skill-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+.soft-skill-title {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+.soft-skill-description {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    line-height: 1.5;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* ===== DIVIDER ===== */
+.tech-divider {
+    border-left: 1px dashed var(--accent-olive);
+    height: 100%;
+    align-self: stretch;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .soft-skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .tech-divider {
+        display: none;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    
+    .soft-skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.4rem;
+        margin-bottom: 30px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .soft-skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .circle-progress-container {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .circle-progress-container.small {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .soft-skill-header {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .soft-skill-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .soft-skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .circle-progress-container {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .circle-progress-container.small {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .circle-percentage {
+        font-size: 1rem;
+    }
+    
+    .circle-progress-container.small .circle-percentage {
+        font-size: 0.9rem;
+    }
+    
+    .skill-name {
+        font-size: 0.85rem;
+    }
+    
+    .soft-skill-card {
+        padding: 15px;
+    }
+    
+    .soft-skill-title {
+        font-size: 0.95rem;
+    }
+}

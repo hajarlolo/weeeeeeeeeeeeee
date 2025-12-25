@@ -1,0 +1,208 @@
+/* AboutStats.css - Combined About & Stats Section */
+
+.about-stats-section {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Stats Section Styles - EXACT OLD STYLE */
+.about-stats-section .stats-section {
+    padding: 10px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 3rem;
+}
+
+.about-stats-section .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.about-stats-section .stat-item {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.about-stats-section .stat-number {
+    font-size: 3rem;
+    font-family: 'Crimson Text', serif;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0px;
+    line-height: 1;
+}
+
+.about-stats-section .stat-label {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    margin-top: 0.5rem;
+}
+
+/* About Section Styles */
+.about-stats-section .about-section {
+    margin-top: 0;
+}
+
+.about-stats-section .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    padding-top: 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.about-stats-section .about-header {
+    padding-right: 1rem;
+}
+
+.about-stats-section .about-title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin: 0 0 40px 0;
+    font-family: 'Crimson Text', serif;
+    position: relative;
+    display: inline-block;
+}
+
+.about-stats-section .about-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: var(--accent-olive);
+}
+
+.about-stats-section .about-text {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-stats-section .about-text p {
+    margin-bottom: 0px;
+}
+
+.about-stats-section .about-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-stats-section .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 0;
+    }
+
+    .about-stats-section .about-text {
+        font-size: 1rem;
+    }
+
+    .about-stats-section .about-title {
+        font-size: 2.4rem;
+    }
+
+    .about-stats-section .about-header {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-stats-section {
+        padding: 2rem 1rem;
+    }
+
+    .about-stats-section .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 0 30px;
+    }
+
+    .about-stats-section .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .about-stats-section .about-content {
+        gap: 30px;
+        padding: 0 30px;
+    }
+
+    .about-stats-section .about-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .about-stats-section .about-text {
+        font-size: 1rem;
+        text-align: justify;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-stats-section .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .about-stats-section .stat-item {
+        padding-top: 30px;
+        padding-bottom: 10px;
+    }
+
+    .about-stats-section .stat-number {
+        font-size: 2.25rem;
+    }
+
+    .about-stats-section .about-content {
+        padding: 0 20px;
+    }
+
+    .about-stats-section .about-title {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+
+    .about-stats-section .about-text {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .about-stats-section .stats-section {
+        background-color: rgba(255, 255, 255, 0.5);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .about-stats-section .stat-number {
+        color: #333;
+    }
+
+    .about-stats-section .stat-label {
+        color: var(--text-gray);
+    }
+
+    .about-stats-section .about-title {
+        color: #333;
+    }
+
+    .about-stats-section .about-text {
+        color: #626161;
+    }
+}

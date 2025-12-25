@@ -1,0 +1,109 @@
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero-text .intro {
+    font-size: 1.2rem;
+    color: var(--accent-light);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.hero-text .description {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 40px;
+    max-width: 90%;
+}
+
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.portrait-frame {
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 25px 50px #21044052;
+    border: 15px solid white;
+}
+
+.portrait-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portrait-frame:hover img {
+    transform: scale(1.10);
+}
+
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 3.8rem;
+    }
+
+    .hero-text .description {
+        max-width: 100%;
+    }
+
+    .portrait-frame {
+        width: 320px;
+        height: 320px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .portrait-frame {
+        width: 280px;
+        height: 280px;
+        border-width: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text .intro {
+        font-size: 1.1rem;
+    }
+
+    .portrait-frame {
+        width: 250px;
+        height: 250px;
+    }
+}
